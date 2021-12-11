@@ -1,5 +1,7 @@
 server:
-  port: 8080
+  port: 8080  
+  servlet:
+    context-path: /mvp    
 spring:
   profiles:
     active:
@@ -8,6 +10,16 @@ spring:
     hibernate:
       ddl-auto: "none"
     show-sql: true
+    properties:
+      hibernate:
+        '[use_sql_comments: true,
+        format_sql: true,
+        type: "trace"]'
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+      fail-on-ignored-properties: true
+    date-format: "yyyy-MM-dd'T'HH:mm:ss"
   application:
     name: "MVP - Restaurantes"
 jwt:

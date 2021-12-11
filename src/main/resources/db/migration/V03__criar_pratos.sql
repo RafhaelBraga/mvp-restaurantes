@@ -3,5 +3,6 @@ CREATE TABLE pratos (
 	nome VARCHAR(20) NOT NULL,
 	descricao VARCHAR(100) NOT NULL,
 	preco DECIMAL(10,2) NOT NULL,
-	CONSTRAINT `pratos_fk_1` FOREIGN KEY(`id`) REFERENCES `restaurantes`(`id`)
+	id_restaurante BIGINT(20) NOT NULL,
+	FOREIGN KEY(id_restaurante) REFERENCES restaurantes(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

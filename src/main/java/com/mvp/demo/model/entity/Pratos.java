@@ -1,15 +1,13 @@
-package com.mvp.demo.model;
-
-import java.util.List;
+package com.mvp.demo.model.entity;
 
 import javax.persistence.Column;
-import javax.persistence.Embeddable;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -22,7 +20,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Embeddable
+@Entity
+@Table(name = "pratos")
 public class Pratos {
 
 	@Id
@@ -44,7 +43,7 @@ public class Pratos {
 	private long preco;	
 
 	@ManyToOne
-    @JoinColumn(name="id", nullable=false)
-	private List<Restaurantes> restaurantes;
+    @JoinColumn(name="id_restaurante", nullable=false)
+	private Restaurantes restaurantes;
 	
 }

@@ -7,9 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mvp.demo.model.dto.PratosDto;
 import com.mvp.demo.model.dto.RestaurantesDto;
-import com.mvp.demo.model.entity.Pratos;
 import com.mvp.demo.model.entity.Restaurantes;
 import com.mvp.demo.repository.RestaurantesRepository;
 
@@ -38,4 +36,5 @@ public class RestaurantesService {
 		}
 		return Optional.of(listRestaurantesDto);
 	}
+	
 }

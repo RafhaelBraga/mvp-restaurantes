@@ -1,5 +1,6 @@
 package com.mvp.demo.model.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -12,8 +13,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,8 +24,14 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "restaurantes")
-public class Restaurantes {
+public class Restaurantes implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;	
@@ -52,8 +57,7 @@ public class Restaurantes {
 	@Column(name = "telefone")
 	private long telefone;
 	
-	@OneToMany(mappedBy = "id")
-    @JsonManagedReference
+	@OneToMany(mappedBy = "restaurantes")
 	private List<Pratos> pratos;
 	
 }

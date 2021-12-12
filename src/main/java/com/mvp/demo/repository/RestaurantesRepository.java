@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.mvp.demo.model.entity.Restaurantes;
 
 @Repository
-public interface RestaurantesRepository extends JpaRepository<Restaurantes, Long>{
+public interface RestaurantesRepository extends JpaRepository<Restaurantes, Long> {
 
 }

@@ -23,7 +23,7 @@ public class PratosService {
 		List<Pratos> listPratos = pratosRepository.findPratosByRestauranteId(id_restaurante);
 	
 		for(Pratos prato: listPratos) {
-			listPratosDto.add(new PratosDto(prato.getId(), prato.getNome(), prato.getDescricao(), prato.getPreco(), prato.getRestaurantes()));
+			listPratosDto.add(new PratosDto(prato.getId(), prato.getNome(), prato.getDescricao(), prato.getPreco()));
 		}
 		return Optional.of(listPratosDto);
 	}

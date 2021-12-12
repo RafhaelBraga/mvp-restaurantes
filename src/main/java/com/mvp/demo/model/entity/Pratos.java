@@ -11,6 +11,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -44,6 +46,7 @@ public class Pratos {
 
 	@ManyToOne
     @JoinColumn(name="id_restaurante", nullable=false)
+    @JsonBackReference
 	private Restaurantes restaurantes;
 	
 }

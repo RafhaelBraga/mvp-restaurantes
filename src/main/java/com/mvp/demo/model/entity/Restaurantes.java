@@ -12,6 +12,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -51,6 +53,7 @@ public class Restaurantes {
 	private long telefone;
 	
 	@OneToMany(mappedBy = "id")
+    @JsonManagedReference
 	private List<Pratos> pratos;
 	
 }

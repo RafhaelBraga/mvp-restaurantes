@@ -2,6 +2,8 @@ package com.mvp.demo.model.dto;
 
 import java.util.List;
 
+import com.mvp.demo.model.entity.Pratos;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,6 +21,6 @@ public class RestaurantesDto {
 	private String logradouro;	
 	private long numero;	
 	private long telefone;
-	private List<PratosDto> pratos;
+	private List<Pratos> pratos;
 	
 }
